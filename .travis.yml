@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true maeri/frontend npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-2"
+  app: "docker-k8s-udemy"
+  env: "DockerK8sUdemy-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-471512436894"
+  bucket_path: "docker-k8s-udemy"
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
