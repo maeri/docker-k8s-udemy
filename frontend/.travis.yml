@@ -1,9 +1,0 @@
-sudo: required
-services: 
-  - docker
-
-before_install:
-  - docker build -t maeri/frontend -f Dockerfile.dev . 
-
-script:
-  - docker run CI=true maeri/frontend npm run test -- --coverage
