@@ -5,9 +5,6 @@ services:
 before_install:
   - docker build -t maeri/frontend -f ./frontend/Dockerfile.prod ./frontend/. 
 
-script:
-  - docker run -e CI=true maeri/frontend
-
 deploy:
   provider: elasticbeanstalk
   region: "eu-west-2"
