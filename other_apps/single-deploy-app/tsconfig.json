@@ -20,6 +20,6 @@
     "jsx": "preserve"
   },
   "include": [
-    "src"
+    "other_apps/single-deploy-app/src"
   ]
 }
